@@ -20,6 +20,7 @@ String phone = "mobile";
 String tablet = "tablet";
 String desktop = "desktop";
 String today = "today";
+String useBiometric = "useBiometric";
 String night = "night";
 String day = "day";
 String auto = "auto";

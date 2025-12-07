@@ -35,6 +35,7 @@ import '../home_screen/background_screen.dart';
 class CarScreen extends StatefulWidget {
   CarScreen({required this.animateCart});
   late Function(int) animateCart;
+  late Function(int) back;
 
   @override
   State<CarScreen> createState() => _CarScreenState();
@@ -89,12 +90,20 @@ class _CarScreenState extends State<CarScreen> {
                     Background(),
                     Column(
                       children: [
-                        HeaderScreen(changeScreen: (val){},),
-                        SearchScreen(hintText: MyStrings.nashr_search,icon:box.read(today)==night ? Assets.icons.blackSearch : Assets.icons.whiteSearch,controler: searchController['search'],lableText: '',isPost: true,isPost2: false,search: (val){
-                          filterByType(val!);
-                        },),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 0),
+                              child: Image(image: Assets.images.logo.provider(),width: size.width*0.2,),
+                            ),
+                            Text(MyStrings.nashr_logo,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),)
+                          ],
+                        ),
+                        // SearchScreen(hintText: MyStrings.nashr_search,icon:box.read(today)==night ? Assets.icons.blackSearch : Assets.icons.whiteSearch,controler: searchController['search'],lableText: '',isPost: true,isPost2: false,search: (val){
+                        //   filterByType(val!);
+                        // },),
                         SizedBox(height: 5,),
-                        TitleScreen().title(size, context, MyStrings.nashr_tb_title,false),
+                        TitleScreen().title(size, context, MyStrings.nashr_tb_title,false,(val){Navigator.of(context).pop();}),
                         SizedBox(height: 5,),
                         Container(
                           width: size.width/1.10,
@@ -102,7 +111,9 @@ class _CarScreenState extends State<CarScreen> {
                             Text(MyStrings.nashr_getCar_id,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
                             Text(MyStrings.nashr_getCar_mabda,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
                             Text(MyStrings.nashr_getCar_maghsad,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
-                            Text(MyStrings.nashr_getCar_typeCar,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
+                            Text('',style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
+                            Text('',style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
+                            Text('',style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 13.0,color: SolidColorMain.simia_Title),),
 
                           ],),
                         ),

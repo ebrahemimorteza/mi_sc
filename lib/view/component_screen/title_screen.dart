@@ -12,7 +12,7 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class TitleScreen{
   var box = GetStorage();
-  Widget title(size,context,title,isPost){
+  Widget title(size,context,title,isPost,back){
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Center(
@@ -33,7 +33,7 @@ class TitleScreen{
                 flex: 1,
                 child: ZoomTapAnimation(
                   onTap: (){
-                    Navigator.of(context).pop();
+                    back(0);
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
@@ -45,7 +45,7 @@ class TitleScreen{
                 flex: 1,
                 child: ZoomTapAnimation(
                   onTap: (){
-                    Navigator.of(context).pop();
+                    back(0);
                   },
                   child: Padding(
                       padding: const EdgeInsets.all(2.0),

@@ -26,7 +26,8 @@ import '../../repository/bloc/blocs.dart';
 import '../../repository/bloc/event.dart';
 
 class MessageScreen extends StatefulWidget {
-  const MessageScreen({super.key});
+  MessageScreen({super.key,required this.back});
+  final Function(int) back;
 
   @override
   State<MessageScreen> createState() => _CartScreenState();
@@ -68,7 +69,7 @@ class _CartScreenState extends State<MessageScreen> {
                       top: 30.0,
                       child: Column(
                         children: [
-                          TitleScreen().title(size, context, MyStrings.nashr_message,true),
+                          TitleScreen().title(size, context, MyStrings.nashr_message,true,(){widget.back(1);}),
                           SizedBox(height: 5,),
                           Expanded(
                             child: AnimationLimiter(

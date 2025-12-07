@@ -22,8 +22,9 @@ import 'package:atrak/view/login_screen/login-screen.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SittingScreen extends StatefulWidget {
-  const SittingScreen({super.key,required this.changeScreen});
+  const SittingScreen({super.key,required this.changeScreen,required this.back});
   final Function(int) changeScreen;
+  final Function(int) back;
 
   @override
   State<SittingScreen> createState() => _BookScreenState();
@@ -143,7 +144,7 @@ class _BookScreenState extends State<SittingScreen> {
             // ),
             child: Column(children: [
               SizedBox(height: 5,),
-              TitleScreen().title(size, context, MyStrings.nashr_book,false),
+              TitleScreen().title(size, context, MyStrings.nashr_book,false,(val){widget.back(1);}),
               SizedBox(height: 10,),
               // ZoomTapAnimation(child: InkWell(onTap:(){},child: boxCol(size,context,box.read(today)==night ?  Assets.icons.blackAnbar.provider() : Assets.icons.whiteAnbar.provider(),MyStrings.nashr_tem,false,1))),
               SizedBox(height: 10,),

@@ -123,17 +123,17 @@ class _MainScreenState extends State<MainScreen> {
                     Navigator(
                       key:_homeKey,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) =>selectedPageIndex==0 ? Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,): Text('')),
+                          MaterialPageRoute(builder: (context) =>selectedPageIndex==0 ? Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,back: (val){_onWillPop();}): Text('')),
                     ),
                     Navigator(key:_cartKey ,
                         onGenerateRoute: (sitting) =>
-                            MaterialPageRoute(builder: (context) =>selectedPageIndex==1 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,) : Text('')),),
+                            MaterialPageRoute(builder: (context) =>selectedPageIndex==1 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,back: (val){_onWillPop();},) : Text('')),),
                     Navigator(key:_bookKey ,
                         onGenerateRoute: (sitting) =>
-                            MaterialPageRoute(builder: (context) =>selectedPageIndex==2 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,) : Text('')),),
+                            MaterialPageRoute(builder: (context) =>selectedPageIndex==2 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,back: (val){_onWillPop();}) : Text('')),),
                     Navigator(key:_profileKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) =>selectedPageIndex==3 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,) : Text('')),),
+                          MaterialPageRoute(builder: (context) =>selectedPageIndex==3 ?  Homescreen(size: size, changeScreen: (val){changeScreen(val); },param: selectedPageIndex,back: (val){_onWillPop();}) : Text('')),),
                   ]
                     ,)),
               NavigationButton(

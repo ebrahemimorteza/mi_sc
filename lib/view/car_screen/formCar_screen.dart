@@ -53,7 +53,7 @@ class _AddgeterScreenState extends State<FormcarScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 5,),
-                    TitleScreen().title(size, context, MyStrings.nashr_getCar_title,false),
+                    TitleScreen().title(size, context, MyStrings.nashr_getCar_title,false,(val){Navigator.of(context).pop();}),
                     SizedBox(height: 5,),
 
                     // Column(

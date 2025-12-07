@@ -29,6 +29,8 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 
 class ProfileScreen extends StatefulWidget {
+  ProfileScreen({super.key,required this.back});
+final Function(int) back;
   @override
   _ImagePickerExampleState createState() => _ImagePickerExampleState();
 }
@@ -118,7 +120,7 @@ class _ImagePickerExampleState extends State<ProfileScreen> with SingleTickerPro
       child: Container(
         child: Column(
           children: [
-          TitleScreen().title(size, context, MyStrings.nashr_profile,false),
+          TitleScreen().title(size, context, MyStrings.nashr_profile,false,(val){widget.back(1);}),
           SizedBox(height: 1,),
           prof(size),
           SizedBox(height: 1,),

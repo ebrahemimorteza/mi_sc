@@ -128,7 +128,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val21,style: AppStyle.mainTextStyleLogo.copyWith(color:SolidColorMain.simia_lable),),
                       Text("0",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -137,7 +137,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val22,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[37]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -152,7 +152,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(MyStrings.nashr_title_val23,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                           Text("${salaray_list.isEmpty ? "" : salaray_list[33]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),
@@ -162,7 +162,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val24,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[35]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -171,7 +171,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val25,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[39]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -186,7 +186,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val26,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[38]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -195,7 +195,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val27,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[42]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -210,7 +210,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val28,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[41]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -219,7 +219,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val29,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[40]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -234,7 +234,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val30,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[35]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -261,7 +261,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
           //     child: Padding(
           //       padding: const EdgeInsets.all(8.0),
           //       child: Column(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //         mainAxisAlignment: MainAxisAlignment.spaceAround,
           //         crossAxisAlignment: CrossAxisAlignment.center,
           //         children: [
           //           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
@@ -292,7 +292,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val11,style: AppStyle.mainTextStyleLogo.copyWith(color:SolidColorMain.simia_lable),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[26]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -301,7 +301,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val12,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[11]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -316,7 +316,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(MyStrings.nashr_title_val13,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                           Text("${salaray_list.isEmpty ? "" : salaray_list[12]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),
@@ -325,7 +325,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val14,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[19]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -334,7 +334,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val15,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[21]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -349,7 +349,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val16,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[18]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -358,7 +358,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val17,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[13]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -373,7 +373,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val18,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[25]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -382,7 +382,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val19,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[31]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -397,7 +397,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val20,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("0",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -424,7 +424,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
           //     child: Padding(
           //       padding: const EdgeInsets.all(8.0),
           //       child: Column(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //         mainAxisAlignment: MainAxisAlignment.spaceAround,
           //         crossAxisAlignment: CrossAxisAlignment.center,
           //         children: [
           //           SizedBox(height: 10,),
@@ -456,7 +456,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val1,style: AppStyle.mainTextStyleLogo.copyWith(color:SolidColorMain.simia_lable),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[10]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -465,7 +465,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val2,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[9]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),                        ]
@@ -480,7 +480,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(MyStrings.nashr_title_val3,style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_lable),),
                           Text("${salaray_list.isEmpty ? "" : salaray_list[7]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: SolidColorMain.simia_BackwhiteAndBlack),),
@@ -490,7 +490,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val4,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[6]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -499,7 +499,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val5,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[5]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -514,7 +514,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val6,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[3]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -523,7 +523,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val7,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[2]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -538,7 +538,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val8,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("0",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -547,7 +547,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val9,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("${salaray_list.isEmpty ? "" : salaray_list[1]["formanswers_answer"] ?? ""}",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -562,7 +562,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(MyStrings.nashr_title_val10,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),
                       Text("0",style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appBlack),),                        ]
@@ -599,7 +599,7 @@ class _StepProgressPageState extends State<StepProgressPage> {
             Positioned(
               top: 30,
               child: Stack(children: [
-                TitleScreen().title(size,context,MyStrings.nashr_tb_addKala,false),
+                TitleScreen().title(size,context,MyStrings.nashr_tb_addKala,false,(val){Navigator.of(context).pop();}),
                 // Positioned(top:18,right: 150,child: Center(child: Text(param,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 11.0,color: SolidColorMain.simia_subTitle),)))
               ]),
             ),

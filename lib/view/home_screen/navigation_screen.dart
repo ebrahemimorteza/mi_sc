@@ -192,31 +192,31 @@ class _NavigationButtonState extends State<NavigationButton> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Positioned(
-            top: -21,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Container(
-                width: 10,
-                height: 5,
-                // color: Colors.grey[300],
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    width: 50,
-                    height: 25,
-                    decoration: BoxDecoration(
-                      color:box.read(today)==night ? isPost ?  SolidColor.dr_appBlue1 : SolidColor.dr_appBlack2 :isPost ?  SolidColor.dr_appButton : SolidColor.softTurquoise,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: -21,
+          //   left: 0,
+          //   right: 0,
+          //   child: Center(
+          //     child: Container(
+          //       width: 10,
+          //       height: 5,
+          //       // color: Colors.grey[300],
+          //       child: Align(
+          //         alignment: Alignment.topCenter,
+          //         child: Container(
+          //           width: 50,
+          //           height: 25,
+          //           decoration: BoxDecoration(
+          //             color:box.read(today)==night ? isPost ?  SolidColor.dr_appBlue1 : SolidColor.dr_appBlack2 :isPost ?  SolidColor.dr_appButton : SolidColor.softTurquoise,
+          //             borderRadius: BorderRadius.vertical(
+          //               top: Radius.circular(50),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           // ایکون در وسط
           Container(
             child: Positioned(

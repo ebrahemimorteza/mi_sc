@@ -62,7 +62,7 @@ class _GetBarState extends State<GetCar> {
                       HeaderScreen(changeScreen: changeScreenModal,),
                       SearchScreen(hintText: MyStrings.nashr_search,icon:box.read(today)==night ? Assets.icons.blackSearch : Assets.icons.whiteSearch,controler: loginController['search'],lableText: '',isPost: false,isPost2: false,search: (val){},),
                       SizedBox(height: 5,),
-                      TitleScreen().title(size, context, MyStrings.nashr_getCar_request,false),
+                      TitleScreen().title(size, context, MyStrings.nashr_getCar_request,false,(val){}),
                       SizedBox(height: 5,),
                       mRefresh(size,context),
                       SizedBox(height: 5,),

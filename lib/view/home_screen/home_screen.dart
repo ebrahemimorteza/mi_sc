@@ -11,15 +11,16 @@ import 'package:atrak/view/profile_screen/profile_screen.dart';
 
 
 class Homescreen extends StatelessWidget {
-  Homescreen({Key? Key, required this.size, required this.changeScreen, required this.param}) : super(key: Key);
+  Homescreen({Key? Key, required this.size, required this.changeScreen, required this.back, required this.param}) : super(key: Key);
   final Function(int) changeScreen;
+  final Function(int) back;
   final Size size;
   final int param;
   List<Widget> get pages => [
-    HomemainScreen(changeScreen: changeScreen),
-    MessageScreen(),
-    SittingScreen(changeScreen: changeScreen),
-    ProfileScreen(),
+    HomemainScreen(changeScreen: changeScreen,back: back,),
+    MessageScreen(back: back,),
+    SittingScreen(changeScreen: changeScreen,back: back,),
+    ProfileScreen(back: back,),
   ];
   // List<Widget> page = [HomemainScreen(changeScreen: changeScreen,),MessageScreen(),SittingScreen(),ProfileScreen()];
   List<String> title = [MyStrings.nashr_home,MyStrings.nashr_cart,MyStrings.nashr_book,MyStrings.nashr_search,MyStrings.nashr_profile];

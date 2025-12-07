@@ -18,8 +18,9 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../car_screen/car_screen.dart';
 
 class HomemainScreen extends StatelessWidget {
-  HomemainScreen({super.key,required this.changeScreen});
+  HomemainScreen({super.key,required this.changeScreen,required this.back});
   final Function(int) changeScreen;
+  final Function(int) back;
   var box = GetStorage();
   // final now = DateTime.now(); // تاریخ امروز میلادی
   @override
@@ -60,6 +61,8 @@ class HomemainScreen extends StatelessWidget {
                 },child: content(size,size.width/2.30,MyStrings.nashr_car,false))),
                 SizedBox(width: 10,),
                 ZoomTapAnimation(child: InkWell(onTap: (){
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text('به زودی')));
                   // showDialog(
                   //   context: context, // دقت کن که این context باید زیر BlocProvider باشه
                   //   builder: (BuildContext dialogContext) {
@@ -82,6 +85,8 @@ class HomemainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ZoomTapAnimation(onTap:(){
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text('به زودی')));
                   // showDialog(
                   //   context: context,
                   //   barrierDismissible: false,
@@ -96,6 +101,8 @@ class HomemainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ZoomTapAnimation(onTap:(){
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text('به زودی')));
                   // showDialog(
                   //   context: context,
                   //   barrierDismissible: false,
@@ -105,6 +112,8 @@ class HomemainScreen extends StatelessWidget {
                 },child: content(size,size.width/2.30,MyStrings.nashr_bar,false)),
                 SizedBox(width: 10,),
                 ZoomTapAnimation(onTap:(){
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text('به زودی')));
                   // showDialog(
                   //   context: context,
                   //   barrierDismissible: false,

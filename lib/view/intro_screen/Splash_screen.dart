@@ -1,5 +1,6 @@
 import 'package:atrak/view/component_screen/solidColor.dart';
 import 'package:atrak/view/component_screen/style.dart';
+import 'package:atrak/view/login_screen/logintest.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
@@ -61,56 +62,6 @@ class _SpashScreenState extends State<splashScreen>{
       // Navigator.of(globalContext).pushReplacement(MaterialPageRoute(builder: (context)=>box.read(language) == null ? OnBoardingPage() : MainScreen(rout: 0,)));
     });
   }
-  void routing(context){
-    Future.delayed(Duration(seconds: 3)).then((value){
-      box.write(sizeScreen, valueSizeScreen);
-      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MainScreen(rout: 0,)));
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>box.read(token) == null ? MainScreen() : MainScreen()));
-    });
-  }
-  void routingWithPage(context){
-    print("valueSizeScreen >>>>>>>>>>>>>>$valueSizeScreen<<<<<<<<<<<< valueSizeScreen");
-    Future.delayed(Duration(seconds: 1)).then((value){
-      box.write(sizeScreen, valueSizeScreen);
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MainScreen()));
-      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>box.read(language) == null ? IntroScreenDefaultState(sizeScreen: valueSizeScreen,) : MainScreen(sizeScreen: valueSizeScreen,)));
-    });
-  }
-  static bool _isRootLogin = false;
-  static bool _isRootProfile = false;
-  static bool _isRootPlacement = false;
-  static bool _isRootCart = false;
-  static var globalContext;
-  static var size;
-  Future<String?> getUrlWeb() async{
-    // خواندن URL فعلی مرورگر
-    Uri currentUri = Uri.base;
-    debugPrint('<><><><><><><><><><><><><>');
-    debugPrint('$currentUri');
-    debugPrint('<><><><><><><><><><><><><>');
-    String? type = currentUri.queryParameters['type'];
-    // بررسی URL ساده
-    var tok = box.read(token);
-    if (type == 'loginApplication') {
-      if(tok==null){
-        _isRootLogin = true;
-      }else{
-        _isRootProfile = true;
-      }
-    } // بررسی URL ساده
-    else if (type ==  'placement') {
-      _isRootPlacement = true;
-    }else {
-      String? id = currentUri.queryParameters['id'];
-      String? lang = currentUri.queryParameters['lang'];
-      if(id!=null){
-        _isRootCart = true;
-
-      }
-    }
-
-
-  }
   @override
   void dispose(){
     super.dispose();
@@ -120,9 +71,9 @@ class _SpashScreenState extends State<splashScreen>{
     print(box.read(today));
     initAppLinks(context,true);
     // getUrlWeb();
-    globalContext=context;
+  var  globalContext=context;
     print(box.read(today));
-    size = MediaQuery.sizeOf(context);
+   var size = MediaQuery.sizeOf(context);
     // TODO: implement build
     return SafeArea(
       child: Scaffold(
@@ -174,72 +125,11 @@ class _SpashScreenState extends State<splashScreen>{
       ),
     );
   }
-  Future<void> _checkLogin() async {
-    final loggedIn = box.read(token) ?? false;
-
-    if (loggedIn==false) {
-      bool didAuthenticate = false;
-      final canCheck = await auth.canCheckBiometrics;
-      final isDeviceSupported = await auth.isDeviceSupported();
-      // کاربر وارد نشده، بره صفحه ورود معمولی
-      _goToLogin();
-      print(canCheck);
-      print(auth.getAvailableBiometrics());
-      if (canCheck && isDeviceSupported) {
-        didAuthenticate = await auth.authenticate(
-          localizedReason: 'لطفا برای ورود اثر انگشت یا فیس آیدی بزنید',
-          options: const AuthenticationOptions(
-            biometricOnly: true,
-            stickyAuth: true,
-          ),
-        );
-      }
-    } else {
-      print("auth");
-      // کاربر قبلا وارد شده، درخواست احراز هویت بیومتریک کن
-      bool didAuthenticate = false;
-      try {
-        print("check finger print >>>>>> -");
-      // if(box.read(autoFinger)){
-        final canCheck = await auth.canCheckBiometrics;
-        final isDeviceSupported = await auth.isDeviceSupported();
-       print(canCheck);
-       print(auth.getAvailableBiometrics());
-        if (canCheck && isDeviceSupported) {
-          didAuthenticate = await auth.authenticate(
-            localizedReason: 'لطفا برای ورود اثر انگشت یا فیس آیدی بزنید',
-            options: const AuthenticationOptions(
-              biometricOnly: true,
-              stickyAuth: true,
-            ),
-          );
-        }
-      // }else{
-        _goToLogin();
-      // }
-      } catch (e) {
-        didAuthenticate = false;
-      }
-      if (didAuthenticate) {
-        // _goToHome();
-      } else {
-        // اگر احراز هویت بیومتریک موفق نبود، به صفحه ورود عادی برگرد
-        _goToLogin();
-      }
-    }
-  }
-
   void _goToLogin() {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>box.read(token) == null  ? LoginScreen() : MainScreen()));
+    // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginScreen()));
     // Navigator.of(context).pushReplacement(
     //   MaterialPageRoute(builder: (_) => const LoginPage()),
-    // );
-  }
-
-  void _goToHome() {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MainScreen()));
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(builder: (_) => const HomePage()),
     // );
   }
 }

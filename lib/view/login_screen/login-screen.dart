@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:atrak/view/home_screen/main_screen.dart';
+import 'package:atrak/view/login_screen/logintest.dart';
 import 'package:atrak/view/login_screen/test.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
@@ -23,6 +24,7 @@ import 'package:atrak/view/component_screen/textFiled_screen.dart';
 import 'package:atrak/view/home_screen/background_screen.dart';
 import 'package:atrak/view/login_screen/verification_screen.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -41,6 +43,8 @@ class _SpashScreenState extends State<LoginScreen>{
   bool _isSelectLoading = true;
   bool _isFeild = true;
   bool _isLock = true;
+  final BiometricHelper bioHelper = BiometricHelper();
+  bool canUseBio = false;
   // **controller**//
   final Map<String, TextEditingController> loginController = {
     'username': TextEditingController(),
@@ -52,7 +56,34 @@ class _SpashScreenState extends State<LoginScreen>{
   @override
   void initState(){
     super.initState();
-    box.read(token)==null ? "" :initAppLinks(context,false);
+    // checkBiometricAvailable();
+    // box.read(token)==null ? "" :initAppLinks(context,false);
+  }
+  void checkBiometricAvailable() async {
+    // bool useBio = true;
+    bool useBio = box.read(useBiometric) ?? false;
+
+    if (useBio) {
+      bool available = await bioHelper.canUseBiometric();
+      print("-------------------------- >");
+      print(available);
+      print("-------------------------- >");
+      setState(() {
+        canUseBio = available;
+      });
+    }
+  }
+  void loginWithBiometric() async {
+    Future.delayed(Duration(microseconds:500));
+    bool ok = await bioHelper.authenticate();
+    print("ok");
+    print(ok);
+    if (ok) {
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>VerificationScreen(mobile_num: loginController['username']!.text,)));
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('اثر انگشت معتبر نیست')));
+    }
   }
   @override
   void dispose(){
@@ -102,19 +133,12 @@ class _SpashScreenState extends State<LoginScreen>{
                           alignment: Alignment.center,
                           // mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image(image: Assets.icons.finger.provider()),
-                            const SizedBox(height: 20),
-                            GestureDetector(
-                              onTap: () async {
-                                await auth.authenticate(
-                                  localizedReason: 'لطفا اثر انگشت خود را اسکن کنید',
-                                  options: const AuthenticationOptions(
-                                    biometricOnly: true,
-                                  ),
-                                );
-                              },
-                              child: const Text("اسکن اثر انگشت"),
-                            ),
+                            if (canUseBio)
+                              ElevatedButton.icon(
+                                onPressed: loginWithBiometric,
+                                icon: Icon(Icons.fingerprint),
+                                label: Text("ورود با اثر انگشت"),
+                              ),
                           ],
                         ),
                         ),
@@ -266,5 +290,26 @@ class _SpashScreenState extends State<LoginScreen>{
       // Navigator.of(globalContext).pushReplacement(MaterialPageRoute(builder: (context)=>box.read(language) == null ? OnBoardingPage() : MainScreen(rout: 0,)));
     });
 
+  }
+}
+// کلاس کمکی بیومتریک
+class BiometricHelper {
+  final LocalAuthentication auth = LocalAuthentication();
+
+  Future<bool> canUseBiometric() async {
+    return await auth.canCheckBiometrics;
+  }
+
+  Future<bool> authenticate() async {
+    try {
+      final bool didAuthenticate = await auth.authenticate(
+        localizedReason: 'برای ورود اثر انگشت خود را تأیید کنید',
+        options: const AuthenticationOptions(biometricOnly: false),
+      );
+      return didAuthenticate;
+    } catch (e) {
+      print('خطا در بیومتریک: $e');
+      return false;
+    }
   }
 }

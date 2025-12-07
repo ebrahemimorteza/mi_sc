@@ -18,7 +18,7 @@ class AppStyle {
   );
   static TextStyle mainTextStyleLogo = TextStyle(
       fontFamily: "YekanBakhMid",
-      fontSize: AppSize.minSizeText2,
+      fontSize: AppSize.minSizeText,
       // fontWeight: FontWeight.normal,
       color: SolidColorMain.simia_whiteAndBlack,
       textBaseline: TextBaseline.alphabetic
