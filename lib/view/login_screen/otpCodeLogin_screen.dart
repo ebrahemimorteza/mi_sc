@@ -219,7 +219,7 @@ class _OtpCodeLoginScreenState extends State<OtpCodeLoginScreen> {
                         border: Border(bottom: BorderSide(color: borderColor,width: 4.0)),                      ),
                     ),
                     errorPinTheme: defaultPinTheme.copyBorderWith(
-                      border: Border.all(color: Colors.redAccent),
+                      border: Border.all(color: Colors.green),
                     ),
                   ),
                 ),

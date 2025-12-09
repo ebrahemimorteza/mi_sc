@@ -8,7 +8,7 @@ class AppSize{
   static const double heightMinimize = 30;
 
   //TODO header
-  static const double heightheader =8.8;
+  static const double heightheader =7.5;
 
   // TODO size screen Divices
   static const double dr_size_tablet = 900.0;

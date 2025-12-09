@@ -146,7 +146,7 @@ class _BookScreenState extends State<SittingScreen> {
               SizedBox(height: 5,),
               TitleScreen().title(size, context, MyStrings.nashr_book,false,(val){widget.back(1);}),
               SizedBox(height: 10,),
-              // ZoomTapAnimation(child: InkWell(onTap:(){},child: boxCol(size,context,box.read(today)==night ?  Assets.icons.blackAnbar.provider() : Assets.icons.whiteAnbar.provider(),MyStrings.nashr_tem,false,1))),
+              ZoomTapAnimation(child: InkWell(onTap:(){},child: boxCol(size,context,box.read(today)==night ?  Assets.icons.whiteAnbar.provider() : Assets.icons.whiteAnbar.provider(),MyStrings.nashr_tem,false,1))),
               SizedBox(height: 10,),
               // ZoomTapAnimation(child: InkWell(onTap:(){},child: boxCol(size,context,box.read(today)==night ?  Assets.icons.nighUser.provider() : Assets.icons.profile.provider(),MyStrings.nashr_finger,false,2))),
               SizedBox(height: 10,),

@@ -118,25 +118,25 @@ class _NavigationButtonState extends State<NavigationButton> {
                               )
                             ]),
                       ),
-                      ZoomTapAnimation(
-                        child: IndexedStack(
-                            index: widget.selectedButtonBookMe,
-                            // key: key,
-                            children: [
-                              TextButton(
-                                onPressed: () => {
-                                  widget.changescreen(2),
-                                },
-                                child:icon(box.read(today)==day ? Assets.icons.setting.provider() : Assets.icons.nightWhiteSetting.provider(),MyStrings.nashr_book,box.read(today)==night ? SolidColor.dr_appBlack1 : SolidColor.dr_appBlack2,size,false),
-                                // iconSize: 35,
-                              ),
-                              TextButton(
-                                  onPressed: () => {},
-                                  child:
-                                  icon(box.read(today)==day ? Assets.icons.settingBlue.provider() : Assets.icons.nightSetting.provider(),MyStrings.nashr_book,box.read(today)==night ? SolidColor.dr_appBlue1 : SolidColor.dr_appButton,size,true),
-                              )
-                            ]),
-                      ),
+                      // ZoomTapAnimation(
+                      //   child: IndexedStack(
+                      //       index: widget.selectedButtonBookMe,
+                      //       // key: key,
+                      //       children: [
+                      //         TextButton(
+                      //           onPressed: () => {
+                      //             widget.changescreen(2),
+                      //           },
+                      //           child:icon(box.read(today)==day ? Assets.icons.setting.provider() : Assets.icons.nightWhiteSetting.provider(),MyStrings.nashr_book,box.read(today)==night ? SolidColor.dr_appBlack1 : SolidColor.dr_appBlack2,size,false),
+                      //           // iconSize: 35,
+                      //         ),
+                      //         TextButton(
+                      //             onPressed: () => {},
+                      //             child:
+                      //             icon(box.read(today)==day ? Assets.icons.settingBlue.provider() : Assets.icons.nightSetting.provider(),MyStrings.nashr_book,box.read(today)==night ? SolidColor.dr_appBlue1 : SolidColor.dr_appButton,size,true),
+                      //         )
+                      //       ]),
+                      // ),
                       // ZoomTapAnimation(
                       //   child: IndexedStack(
                       //       index: widget.selectedButtonSearch,

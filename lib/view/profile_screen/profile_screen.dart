@@ -25,6 +25,7 @@ import 'package:atrak/view/component_screen/solidColor.dart';
 import 'package:atrak/view/component_screen/storage_screen.dart';
 import 'package:atrak/view/component_screen/style.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 
@@ -124,37 +125,40 @@ class _ImagePickerExampleState extends State<ProfileScreen> with SingleTickerPro
           SizedBox(height: 1,),
           prof(size),
           SizedBox(height: 1,),
-          Padding(
-            padding: const EdgeInsets.only(top: 5.0),
-            child: PreferredSize(
-              preferredSize: Size.fromHeight(10),
-              child: Container(
-                width: size.width/1.10,
-                // color: Colors.white,
-                child: TabBar(
-                  controller: _tabController,
-                  indicatorColor: Colors.transparent, // چون خودمون بردر می‌سازیم
-                  dividerColor: Colors.transparent,
-                  labelPadding: EdgeInsets.symmetric(horizontal: 0.5),
-                  // padding: EdgeInsets.only(left: 50),
-                  isScrollable: false,
-                  tabs: [
-                    _buildTab(0, MyStrings.nashr_tab1,size),
-                    _buildTab(1, MyStrings.nashr_tab2,size),
-                    _buildTab(2, MyStrings.nashr_tab3,size),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 5.0),
+          //   child: PreferredSize(
+          //     preferredSize: Size.fromHeight(10),
+          //     child: Container(
+          //       width: size.width/1.10,
+          //       // color: Colors.white,
+          //       child: TabBar(
+          //         controller: _tabController,
+          //         indicatorColor: Colors.transparent, // چون خودمون بردر می‌سازیم
+          //         dividerColor: Colors.transparent,
+          //         labelPadding: EdgeInsets.symmetric(horizontal: 0.5),
+          //         // padding: EdgeInsets.only(left: 50),
+          //         isScrollable: false,
+          //         tabs: [
+          //           _buildTab(0, MyStrings.nashr_tab1,size),
+          //           _buildTab(1, MyStrings.nashr_tab2,size),
+          //           _buildTab(2, MyStrings.nashr_tab3,size),
+          //         ],
+          //       ),
+          //     ),
+          //   ),
+          // ),
           SizedBox(height: 1,),
-          tab(size),
+          // tab(size),
 
         ],),
       ),
     );
   }
   Widget prof(Size size){
+    final jalali = Jalali.fromDateTime(DateTime.now()); // تبدیل به شمسی
+    final date ="${jalali.year}/${jalali.month}/${jalali.day}";
+    final hour ="${jalali.hour}:${jalali.minute}";
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Center(
@@ -208,10 +212,7 @@ class _ImagePickerExampleState extends State<ProfileScreen> with SingleTickerPro
                         padding: const EdgeInsets.all(8.0),
                         child: Stack(children:[
                           Text(box.read(name)==null ? 'مهندس ثالثی': "${box.read(name)}",style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 18.0),
-                            child: Text(box.read(name)==null ? 'ادمین': box.read(name),style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
-                          ),
+
 
                         ]),
                       ),
@@ -261,14 +262,14 @@ class _ImagePickerExampleState extends State<ProfileScreen> with SingleTickerPro
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 18.0),
-                        child: Text('12.30',style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
+                        child: Text(hour,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
                       ),
                     ),
                     Expanded(
                       flex: 2,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 18.0),
-                        child: Text('1404/03/05',style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
+                        child: Text(date,style: AppStyle.mainTextStyleLogo.copyWith(fontSize: 14.0,color: SolidColorMain.simia_white),),
                       ),
                     )
                   ],),

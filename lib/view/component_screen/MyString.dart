@@ -16,8 +16,8 @@ class MyStrings {
   static const String nashr_tab2= "ویرایش رمز عبور";
   static const String nashr_tab3= "تاریخچه ورود به سیستم";
   static const String nashr_car= "فیش حقوقی";
-  static const String nashr_getBar= "ثبت حضور";
-  static const String nashr_seeOpacity= "پیشنهادات";
+  static const String nashr_getBar= "جزئیات حقوقی";
+  static const String nashr_seeOpacity= "ثبت حضور";
   static const String nashr_bar= "امتیازات و جوایز ";
   static const String nashr_exit= "اموزش ";
   static const String nashr_close= "خروج";

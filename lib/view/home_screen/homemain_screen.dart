@@ -13,15 +13,71 @@ import 'package:atrak/view/component_screen/solidColor.dart';
 import 'package:atrak/view/component_screen/storage_screen.dart';
 import 'package:atrak/view/component_screen/style.dart';
 import 'package:atrak/view/home_screen/header_screen.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:shamsi_date/shamsi_date.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../car_screen/car_screen.dart';
-
-class HomemainScreen extends StatelessWidget {
+class HomemainScreen extends StatefulWidget{
   HomemainScreen({super.key,required this.changeScreen,required this.back});
   final Function(int) changeScreen;
   final Function(int) back;
+  State<HomemainScreen> createState() => _HomemainScreenState();
+
+
+}
+class _HomemainScreenState extends State<HomemainScreen>{
+  final BiometricHelper bioHelper = BiometricHelper();
+  bool canUseBio = false;
+  void initState(){
+    super.initState();
+    // checkBiometricAvailable();
+    // box.read(token)==null ? "" :initAppLinks(context,false);
+  }
+  void checkBiometricAvailable() async {
+    bool useBio = true;
+    // bool useBio = box.read(useBiometric) ?? false;
+
+    if (useBio) {
+      bool available = await bioHelper.canUseBiometric();
+      print("-------------------------- >");
+      print(available);
+      print("-------------------------- >");
+      setState(() {
+        canUseBio = available;
+      });
+    }
+  }
+  void loginWithBiometric(context) async {
+    Future.delayed(Duration(microseconds:500));
+    bool ok = await bioHelper.authenticate();
+    print("ok");
+    print(ok);
+    if (ok) {
+      showDialog(
+        context: context, // دقت کن که این context باید زیر BlocProvider باشه
+        builder: (BuildContext dialogContext) {
+          return MultiRepositoryProvider(
+            providers: [
+              RepositoryProvider<Repository>(
+                create: (context) => Repository(),
+              ),
+            ],  // همون بلوکی که توی صفحه اصلی داری
+            child: CarScreen(animateCart: widget.changeScreen),
+          );
+        },
+      );
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>VerificationScreen(mobile_num: loginController['username']!.text,)));
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('اثر انگشت معتبر نیست')));
+    }
+  }
+  @override
+  void dispose(){
+    super.dispose();
+  }
   var box = GetStorage();
+
   // final now = DateTime.now(); // تاریخ امروز میلادی
   @override
   Widget build(BuildContext context) {
@@ -45,19 +101,7 @@ class HomemainScreen extends StatelessWidget {
               children: [
 
                 ZoomTapAnimation(child: InkWell(onTap: (){
-                  showDialog(
-                    context: context, // دقت کن که این context باید زیر BlocProvider باشه
-                    builder: (BuildContext dialogContext) {
-                      return MultiRepositoryProvider(
-                        providers: [
-                          RepositoryProvider<Repository>(
-                            create: (context) => Repository(),
-                          ),
-                        ],  // همون بلوکی که توی صفحه اصلی داری
-                        child: CarScreen(animateCart: changeScreen),
-                      );
-                    },
-                  );
+                  loginWithBiometric(context);
                 },child: content(size,size.width/2.30,MyStrings.nashr_car,false))),
                 SizedBox(width: 10,),
                 ZoomTapAnimation(child: InkWell(onTap: (){
@@ -211,19 +255,42 @@ class HomemainScreen extends StatelessWidget {
           ),
           child:isPost ? Row(mainAxisAlignment:MainAxisAlignment.center,children: [
             // Image(image: image),
+
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Center(child: Text(text,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appColorWhite,fontSize: 13.0),)),
             )
           ],) : Column(children: [
+
             // Image(image: image),
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Center(child: Text(text,style: AppStyle.mainTextStyleLogo.copyWith(color: box.read(today)==night ? SolidColor.dr_appBlack1: SolidColor.dr_appColorWhite,fontSize: 13.0),)),
-            )
+            ),
+            text == MyStrings.nashr_car ? Icon(Icons.fingerprint,color: Colors.white,size: 25.0,) : Text(''),
           ],),
         )
       ),
     );
+  }
+}
+class BiometricHelper {
+  final LocalAuthentication auth = LocalAuthentication();
+
+  Future<bool> canUseBiometric() async {
+    return await auth.canCheckBiometrics;
+  }
+
+  Future<bool> authenticate() async {
+    try {
+      final bool didAuthenticate = await auth.authenticate(
+        localizedReason: 'برای ورود اثر انگشت خود را تأیید کنید',
+        options: const AuthenticationOptions(biometricOnly: false),
+      );
+      return didAuthenticate;
+    } catch (e) {
+      print('خطا در بیومتریک: $e');
+      return false;
+    }
   }
 }
